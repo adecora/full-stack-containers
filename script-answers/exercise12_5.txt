@@ -1,0 +1,83 @@
+Script started on 2022-06-12 00:03:53+02:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="125" LINES="31"]
+[1m[7m%[27m[1m[0m                                                                                                                             ]2;cora@moon:~/fullstackcontainers]1;..ackcontainers[0m[27m[24m[J
+[1m[0m[1m[36mfullstackcontainers[0m[36m[39m[1m [0m[1mon [0m[1m[37m[1m[37m[0m[37m[1m[37m[35m main[0m[35m[39m[1m[0m[1m[0m[1m[31m [⇡?][0m[31m[39m[1m[0m[0m[39m[1m [0m
+[1m[0m[1m[32m➜ [0m[32m[39m[1m[0m[K[?1h=[?2004h[32mexit[39m[32md[32mo[32mc[32mk[32mer[39m rm todo-backend-container[25Dkill todo-backend-container[27Drun -p 3000:3000 --name todo-backend-container todo-backend[59Dbuild -t[15P[13C [4m.[24m                                    [36D[24m [4mt[24m[4mt[4mo[24m[4mo[4mdo-app[1m[4m/[0m[24m[0m[4m/[4mt[24m[4mt[4mo[24m[4mo[4mdo-[24m[4m-[4mb[24m[4mb[4mackend[1m[4m/[0m[24m[4md[24m[0m[24m [?1l>[?2004l
+]2;docker build -t todo-backend todo-app/todo-backend]1;dockerSending build context to Docker daemon  84.99kB
+Step 1/6 : FROM node@sha256:d6a8cd069ab740759394a9338dc4bc4b9b32b15209cccd0c7faa32d438b1076e
+ ---> c4fbd6393264
+Step 2/6 : WORKDIR /usr/src/app
+ ---> Using cache
+ ---> afa1daa2bbc8
+Step 3/6 : COPY --chown=node:node . .
+ ---> b0ef2f8d6a0a
+Step 4/6 : RUN npm ci --only=production
+ ---> Running in 5a7e5a4a81b7
+[91mnpm[0m[91m WARN old lockfile 
+npm[0m[91m WARN old lockfile The package-lock.json file was created with an old version of npm,
+npm[0m[91m WARN old lockfile so supplemental metadata must be fetched from the registry.
+npm WARN [0m[91mold lockfile 
+npm WARN old lockfile This is a one-time fix-up, please be patient...
+npm [0m[91mWARN old lockfile 
+[0m
+added 88 packages, and audited 89 packages in 4s
+
+3 packages are looking for funding
+  run `npm fund` for details
+
+2 critical severity vulnerabilities
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+[91mnpm notice 
+npm notice New minor version of npm available! 8.0.0 -> 8.12.1
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v8.12.1>
+npm notice Run `npm install -g npm@8.12.1` to update!
+npm notice 
+[0mRemoving intermediate container 5a7e5a4a81b7
+ ---> e303f3eac12e
+Step 5/6 : USER node
+ ---> Running in 9a8a428dd9fe
+Removing intermediate container 9a8a428dd9fe
+ ---> 0d3518b27d81
+Step 6/6 : CMD npm start
+ ---> Running in 01e401fba815
+Removing intermediate container 01e401fba815
+ ---> a599043c7431
+Successfully built a599043c7431
+Successfully tagged todo-backend:latest
+[1m[7m%[27m[1m[0m                                                                                                                             ]2;cora@moon:~/fullstackcontainers]1;..ackcontainers[0m[27m[24m[J
+[1m[0m[1m[36mfullstackcontainers[0m[36m[39m[1m [0m[1mon [0m[1m[37m[1m[37m[0m[37m[1m[37m[35m main[0m[35m[39m[1m[0m[1m[0m[1m[31m [⇡?][0m[31m[39m[1m[0m[0m[39m[1m [0m
+[1m[0m[1m[32m➜ [0m[32m[39m[1m[0m[K[?1h=[?2004h[32mdocker[39m build -t todo-backend [4mtodo-app/todo-backend[24m[50D[32me[32mx[32mi[32mt[39m[39m [39m                        [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [46D[32md[32mo[32mc[32mk[32mer[39m rm todo-backend-container[25Dkill todo-backend-container[27Drun -p 3000:3000 --name todo-backend-container todo-backend[?1l>[?2004l
+]2;docker run -p 3000:3000 --name todo-backend-container todo-backend]1;docker
+> todo-express-backend@0.0.0 start
+> node ./bin/www
+
+[0mGET / [32m200 [0m3.507 ms - 12[0m
+[0mGET / [32m200 [0m0.768 ms - 12[0m
+[0mGET / [32m200 [0m0.688 ms - 12[0m
+[0mGET / [32m200 [0m0.490 ms - 12[0m
+[0mGET / [32m200 [0m0.343 ms - 12[0m
+[0mGET / [32m200 [0m0.493 ms - 12[0m
+[0mGET / [32m200 [0m0.442 ms - 12[0m
+[0mGET / [32m200 [0m0.338 ms - 12[0m
+[0mGET / [32m200 [0m0.577 ms - 12[0m
+[0mGET / [32m200 [0m0.944 ms - 13[0m
+[0mGET / [32m200 [0m0.486 ms - 13[0m
+[0mGET / [32m200 [0m0.590 ms - 13[0m
+[1m[7m%[27m[1m[0m                                                                                                                             ]2;cora@moon:~/fullstackcontainers]1;..ackcontainers[0m[27m[24m[J
+[1m[0m[1m[36mfullstackcontainers[0m[36m[39m[1m [0m[1mon [0m[1m[37m[1m[37m[0m[37m[1m[37m[35m main[0m[35m[39m[1m[0m[1m[0m[1m[31m [⇡?][0m[31m[39m[1m[0m[0m[39m[1m [0m
+[1m[0m[1m[31m➜ [0m[31m[39m[1m[0m[K[?1h=[?2004h[32mdocker[39m run -p 3000:3000 --name todo-backend-container todo-backend[59Dbuild -t[15P[13C [4mt[4mo[4md[4mo[4m-[4ma[4mp[4mp[4m/[4mt[4mo[4md[4mo[4m-[4mb[4ma[4mc[4mk[4me[4mn[4md[24m                [16D[50D[32me[32mx[32mi[32mt[39m[39m [39m                        [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [46D[32md[32mo[32mc[32mk[32mer[39m rm todo-backend-container[25Dkill todo-backend-container[27Drun -p 3000:3000 --name todo-backend-container todo-backend[59Dbuild -t[15P[13C [4m.[24m                                    [36D[30D[32me[32mx[32mi[32mt[39m[39m [39m                        [24m [26D[32md[32mo[32mc[32mk[32mer[39m build -t todo-backend [4m.[24m[30D[32me[32mx[32mi[32mt[39m[39m [39m                        [24m [26D[32md[32mo[32mc[32mk[32mer[39m build -t todo-backend [4m.[24m[30D[32mb[32ma[32ms[32mh[39m[39m [39m                        [24m [26D[32mc[32md[39m[39m [39m[4mt[4modo-app/todo-backend[24m[21D[4m.[4m.[24m[24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [19D[4mt[4mo[4mdo-app/todo-backend[24m[24D[32mb[32ma[32ms[24m[32mh[39m[24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [20D[32md[32mo[32mc[32mk[32mer[39m build -t todo-backend [4m.[24m[30D[32me[32mx[32mi[32mt[39m[39m [39m                        [24m [26D[32md[32mo[32mc[32mk[32mer[39m build -t todo-backend [4m.[24m[30D[32me[32mx[32mi[32mt[39m[39m [39m                        [24m [26D[32md[32mo[32mc[32mk[32mer[39m build -t todo-backend [4m.[24m[23Drun -p 3000:3000 --nam[24me todo-backend-container todo-backend[59Dkill[19P[24C                               [32D[27Drun -p 3000:3000 --name todo-backend-container todo-backend[59Dkill[19P[24C                               [32D[27Drun -p 3000:3000 --name todo-backend-container todo-backend[59Dbuild -t[15P[13C [4m.[24m                                    [36D[23Drun -p 3000:3000 --nam[24me todo-backend-container todo-backend[59Dkill[19P[24C                               [32D[27Drm[P[P[23C  [32D[32me[32mx[32mi[32mt[39m[39m [39m                           [28D[32md[32mo[32mc[32mk[32mer[39m rm todo-backend-container[25Dkill todo-backend-container[27Drun -p 3000:3000 --name todo-backend-container todo-backend[59Dbuild -t[15P[13C [4m.[24m                                    [36D[?2004l
+[1m[7m%[27m[1m[0m                                                                                                                             ]2;cora@moon:~/fullstackcontainers]1;..ackcontainers[0m[27m[24m[J
+[1m[0m[1m[36mfullstackcontainers[0m[36m[39m[1m [0m[1mon [0m[1m[37m[1m[37m[0m[37m[1m[37m[35m main[0m[35m[39m[1m[0m[1m[0m[1m[31m [⇡?][0m[31m[39m[1m[0m[0m[39m[1m [0m
+[1m[0m[1m[31m➜ [0m[31m[39m[1m[0m[K[?1h=[?2004h
+bck-i-search: _[K[A[13D[32mdocker[39m run -p 3000:3000 --name todo-backend-container todo-backen[4md[24m[1B[54Dd_[A[51C[9D[4md[4mo[24m[7C[24md[1B[53Do_[A[41C[56D[4m[32md[4m[32mo[4m[32mc[24m[53C[24m[39md[24mo[1B[44Dc_[A[16D[2C[4m[32mc[4m[32mk[24m[1B[11C[39mk_[A[17D[3C[4m[32mk[4m[32me[24m[1B[11C[39me_[A[18D[4C[4m[32me[4m[32mr[24m[39m[1B[11Cr_[A[19D[5C[4m[32mr[39m[4m [24m[1B[11C _[A[20D[6C[4m [4mr[24m[1B[11Cr_[A[21D[24m[32md[24m[32mo[24m[32mc[24m[32mk[24m[32me[24m[32mr[39m[24m [24mr[1Bfailing bck-i-search: docker rn_[A[30D[4m[32md[4m[32mo[4m[32mc[4m[32mk[4m[32me[4m[32mr[39m[4m [4mr[24m[1B[8P[22C_         [A[30D[7C[4mr[4mu[24m[1B[11Cu_[A[22D[8C[4mu[4mn[24m[1B[11Cn_[A[23D[12C-rm -it express-server bash                           [66D[24m[32md[24m[32mo[24m[32mc[24m[32mk[24m[32me[24m[32mr[39m[24m [24mr[24mu[24mn[1B[K[A[2C[?1l>[?2004l[1B]2;docker run --rm -it express-server bash]1;docker]0;node@166a1234a178: /usr/src/appnode@166a1234a178:/usr/src/app$ [K]0;node@166a1234a178: /usr/src/appnode@166a1234a178:/usr/src/app$ lls  s
+app.js  [0m[01;34mbin[0m  [01;34mnode_modules[0m  package-lock.json  package.json  [01;34mpublic[0m  [01;34mroutes[0m  [01;34mviews[0m
+]0;node@166a1234a178: /usr/src/appnode@166a1234a178:/usr/src/app$ exit
+exit
+[1m[7m%[27m[1m[0m                                                                                                                             ]2;cora@moon:~/fullstackcontainers]1;..ackcontainers[0m[27m[24m[J
+[1m[0m[1m[36mfullstackcontainers[0m[36m[39m[1m [0m[1mon [0m[1m[37m[1m[37m[0m[37m[1m[37m[35m main[0m[35m[39m[1m[0m[1m[0m[1m[31m [⇡?][0m[31m[39m[1m[0m[0m[39m[1m [0m
+[1m[0m[1m[32m➜ [0m[32m[39m[1m[0m[K[?1h=[?2004h[1m[31me[0m[39m[0m[32me[32mx[39m[1m[31me[1m[31mx[1m[31mi[0m[39m[0m[32me[0m[32mx[0m[32mi[32mt[39m[?1l>[?2004l
+]2;exit]1;exit
+Script done on 2022-06-12 00:05:49+02:00 [COMMAND_EXIT_CODE="0"]
