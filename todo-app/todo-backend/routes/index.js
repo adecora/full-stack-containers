@@ -16,4 +16,16 @@ router.get('/', async (req, res) => {
   });
 });
 
+const statisticsRouter = express.Router();
+
+/* GET statistics. */
+statisticsRouter.get('/', async (req, res) => {
+  const counter = await redis.getAsync('add-todo-counter') || '0';
+  res.send({
+    added_todos: Number(counter),
+  });
+});
+
+router.use('/statistics', statisticsRouter);
+
 module.exports = router;
