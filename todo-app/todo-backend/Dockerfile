@@ -1,11 +1,9 @@
-FROM node@sha256:d6a8cd069ab740759394a9338dc4bc4b9b32b15209cccd0c7faa32d438b1076e
-
+FROM node:lts-alpine@sha256:c785e617c8d7015190c0d41af52cc69be8a16e3d9eb7cb21f0bb58bcfca14d6b
+RUN apk add dumb-init
+ENV NODE_ENV production
+ENV DEBUG todo-express-backend:*
 WORKDIR /usr/src/app
-
-COPY --chown=node:node . .
-
+COPY --chown=node:node . /usr/src/app
 RUN npm ci --only=production
-
 USER node
-
-CMD npm start
+CMD ["dumb-init", "node", "./bin/www"]
