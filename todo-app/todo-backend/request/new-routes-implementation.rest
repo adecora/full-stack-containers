@@ -1,0 +1,9 @@
+GET http://localhost:3000/todos HTTP/1.1
+
+###
+
+GET http://localhost:3000/todos/62a60dfc28dbaff642a9aa3d HTTP/1.1
+
+
+###
+PUT http://localhost:3000/todos/62a60dfc28dbaff642a9aa3d HTTP/1.1
