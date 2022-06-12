@@ -1,0 +1,77 @@
+Script started on 2022-06-12 18:54:15+02:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="139" LINES="54"]
+[1m[7m%[27m[1m[0m                                                                                                                                           ]2;cora@moon:~/fullstackcontainers]1;..ackcontainers[0m[27m[24m[J
+[1m[0m[1m[36mfullstackcontainers[0m[36m[39m[1m [0m[1mon [0m[1m[37m[1m[37m[0m[37m[1m[37m[35m main[0m[35m[39m[1m[0m[1m[0m[1m[31m [⇡][0m[31m[39m[1m[0m[0m[39m[1m [0m
+[1m[0m[1m[32m➜ [0m[32m[39m[1m[0m[K[?1h=[?2004h[32mscript[39m[32me[32mx[32mi[32mt[39m[39m [39m [32md[32mo[32mc[32mk[32mer-compose[39m -f [4mtodo-app/todo-backend/docker-compose.dev.yml[24m -d  up -d[?1l>[?2004l
+]2;docker-compose -f todo-app/todo-backend/docker-compose.dev.yml up -d]1;docker-composeCreating network "todo-backend_default" with the default driver
+Creating volume "todo-backend_mongo_data" with default driver
+Creating todo-backend_mongo_1 ... 
+[1A[2KCreating todo-backend_mongo_1 ... [32mdone[0m[1B[1m[7m%[27m[1m[0m                                                                                                                                           ]2;cora@moon:~/fullstackcontainers]1;..ackcontainers[0m[27m[24m[J
+[1m[0m[1m[36mfullstackcontainers[0m[36m[39m[1m [0m[1mon [0m[1m[37m[1m[37m[0m[37m[1m[37m[35m main[0m[35m[39m[1m[0m[1m[0m[1m[31m [⇡][0m[31m[39m[1m[0m[0m[39m[1m [0m
+[1m[0m[1m[32m➜ [0m[32m[39m[1m[0m[K[?1h=[?2004h[32md[39m[39m [32md[39m[33md[33mo[39m[1m[31md[1m[31mo[1m[31mk[0m[39m[1m[31mk[1m[31mc[0m[39m[1m[31mc[1m[31me[0m[39m[1m[31me[1m[31mr[0m[39m [1m[31me[0m[39m[0m[39m [1m[31mc[0m[39m[0m[39m [1m[31mk[0m[39m[0m[39m [0m[33md[0m[33mo[39m[0m[39m [1m[31md[1m[31mo[1m[31mc[0m[39m[1m[31mc[1m[31mk[0m[39m[1m[31mk[1m[31me[0m[39m[0m[32md[0m[32mo[0m[32mc[0m[32mk[0m[32me[32mr[39m container [4mp[24m[24mps[?1l>[?2004l
+]2;docker container ps]1;dockerCONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+205f1c08e95a   mongo     "docker-entrypoint.s…"   44 seconds ago   Up 42 seconds   0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend_mongo_1
+[1m[7m%[27m[1m[0m                                                                                                                                           ]2;cora@moon:~/fullstackcontainers]1;..ackcontainers[0m[27m[24m[J
+[1m[0m[1m[36mfullstackcontainers[0m[36m[39m[1m [0m[1mon [0m[1m[37m[1m[37m[0m[37m[1m[37m[35m main[0m[35m[39m[1m[0m[1m[0m[1m[31m [⇡][0m[31m[39m[1m[0m[0m[39m[1m [0m
+[1m[0m[1m[32m➜ [0m[32m[39m[1m[0m[K[?1h=[?2004h[32md[39m[33md[33mo[39m[1m[31md[1m[31mo[1m[31mk[0m[39m[1m[31mk[1m[31mc[0m[39m[1m[31mc[1m[31me[0m[39m[1m[31me[1m[31mr[0m[39m[1m[31me[0m[39m[0m[39m [1m[31mc[0m[39m[0m[39m [1m[31mk[0m[39m[0m[39m [0m[33md[0m[33mo[39m[0m[39m [1m[31md[1m[31mo[1m[31mc[0m[39m[1m[31mc[1m[31mk[0m[39m[1m[31mk[1m[31me[0m[39m[0m[32md[0m[32mo[0m[32mc[0m[32mk[0m[32me[32mr[39m exec -it [16D[39md[39mo[39mc[39mk[39me[39mr[10C[7mtodo-backend_mongo_1[27m[36D[32md[32mo[32mc[32mk[32me[32mr[39m[10C[27mt[27mo[27md[27mo[27m-[27mb[27ma[27mc[27mk[27me[27mn[27md[27m_[27mm[27mo[27mn[27mg[27mo[27m_[27m1 mongo \[?1l>[?2004l
+[0m[27m[24m[J[1m[0m[1m[33m➜ [0m[33m[39m[1m[0m[K[?1h=[?2004h--u root \[?1l>[?2004l
+[0m[27m[24m[J[1m[0m[1m[33m➜ [0m[33m[39m[1m[0m[K[?1h=[?2004h--p example[?1l>[?2004l
+]2;docker exec -it todo-backend_mongo_1 mongo -u root -p example]1;dockerMongoDB shell version v5.0.9
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("f48b8778-1503-4acf-9463-3f343f335007") }
+MongoDB server version: 5.0.9
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+	https://docs.mongodb.com/
+Questions? Try the MongoDB Developer Community Forums
+	https://community.mongodb.com
+---
+The server generated these startup warnings when booting: 
+        2022-06-12T16:54:23.470+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs[3G[Jshow dbs[11G
+admin         0.000GB
+config        0.000GB
+local         0.000GB
+the_database  0.000GB
+> use the_database[3G[Juse the_database[19G
+switched to db the_database
+> show collections[3G[Jshow collections[19G
+todos
+> db.todos.find({})[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("62a60dfc28dbaff642a9aa3c"), "text" : "Write code", "done" : true }
+{ "_id" : ObjectId("62a60dfc28dbaff642a9aa3d"), "text" : "Learn about containers", "done" : true }
+> db.todos.insertOne({text[3G[Jdb.todos.insertOne({text[26G[3G[Jdb.todos.insertOne({text[25G[3G[Jdb.todos.insertOne({text[24G[3G[Jdb.todos.insertOne({text[23G[3G[Jdb.todos.insertOne({ text[24G[3G[Jdb.todos.insertOne({ text[25G[3G[Jdb.todos.insertOne({ text[26G[3G[Jdb.todos.insertOne({ text[27G[3G[Jdb.todos.insertOne({ text[28G: "Increase the number of tools in my toolbelt", done: true })[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolbelt", done: true })[90G
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("62a61b670e259fe996080549")
+}
+> [3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolbelt", done: true })[90G[3G[Jdb.todos.find({})[20G[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("62a60dfc28dbaff642a9aa3c"), "text" : "Write code", "done" : true }
+{ "_id" : ObjectId("62a60dfc28dbaff642a9aa3d"), "text" : "Learn about containers", "done" : true }
+{ "_id" : ObjectId("62a61b670e259fe996080549"), "text" : "Increase the number of tools in my toolbelt", "done" : true }
+> exit[3G[Jexit[7G
+bye
+[1m[7m%[27m[1m[0m                                                                                                                                           ]2;cora@moon:~/fullstackcontainers]1;..ackcontainers[0m[27m[24m[J
+[1m[0m[1m[36mfullstackcontainers[0m[36m[39m[1m [0m[1mon [0m[1m[37m[1m[37m[0m[37m[1m[37m[35m main[0m[35m[39m[1m[0m[1m[0m[1m[31m [⇡][0m[31m[39m[1m[0m[0m[39m[1m [0m
+[1m[0m[1m[32m➜ [0m[32m[39m[1m[0m[K[?1h=[?2004h[1m[31me[0m[39m[0m[32me[32mx[39m[1m[31me[1m[31mx[1m[31mi[0m[39m[0m[32me[0m[32mx[0m[32mi[32mt[39m[?1l>[?2004l
+]2;exit]1;exit
+Script done on 2022-06-12 19:00:44+02:00 [COMMAND_EXIT_CODE="0"]
