@@ -1,4 +1,7 @@
 playground
 node_modules
+# File generated with the bash session record history
 typescript
+# Docker volumes to store data
 mongo_data
+redis_data
