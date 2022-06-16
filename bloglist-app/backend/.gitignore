@@ -1,0 +1,9 @@
+# omit node_modules
+node_modules
+# omit environment variables
+.env
+# Omit files for fullstackcontainers
+.eslintrc.js
+requests
+test
+jest.config.js

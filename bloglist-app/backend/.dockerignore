@@ -1,0 +1,11 @@
+mongo
+mongo_data
+node_modules
+requests
+test
+.git
+.gitignore
+.eslintrc.js
+Dockerfile
+dev.Dockerfile
+jest.config.js
