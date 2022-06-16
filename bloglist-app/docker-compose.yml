@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: reverse-proxy
+    depends_on:
+      - express-app
+      - frontend-app
+
+  frontend-app:
+    image: bloglist-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend-app
+
+  express-app:
+    image: bloglist-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: bloglist-backend
+    environment:
+      MONGODB_URI: mongodb://user:password@mongo:27017/bloglist-app
+      PORT: 3000
+      SECRET: secret
+    depends_on:
+      - mongo
+  
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: bloglist-app
+    volumes:
+      - ./backend/mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+      - ./backend/mongo_data:/data/db
