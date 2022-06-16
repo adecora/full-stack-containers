@@ -1,6 +1,6 @@
 # --------------> The build image
 FROM node:16 AS build-stage
-ENV REACT_APP_BACKEND_URL http://localhost:3000
+ENV REACT_APP_BACKEND_URL http://localhost:8080/api
 WORKDIR /usr/src/app
 COPY . /usr/src/app/
 RUN npm ci --only=production
